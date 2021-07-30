@@ -40,7 +40,12 @@ const Layout = ({ children }) => {
             siteTitle={data.site.siteMetadata.title}
             tagline={data.site.siteMetadata.tagline}
             author={data.site.siteMetadata.author}
+<<<<<<< HEAD
             contacts={data.site.siteMetadata.contacts} />
+=======
+            contacts={data.site.siteMetadata.contacts}
+          />
+>>>>>>> b4e9f4f3f2bab76c3873d6a12b5a890c982f02d8
           <div
             style={{
               margin: `0 auto`,
@@ -50,11 +55,31 @@ const Layout = ({ children }) => {
           >
             <main className="p-4">{children}</main>
             <footer className="text-center">
+<<<<<<< HEAD
               <hr/>
               <p className="d-inline">© {new Date().getFullYear()} <a className="text-info" href="https://willjw3.github.io/">willjw3</a>, All Rights Reserved.</p>
               <p className="mt-5 text-muted d-inline"><i> Built with
                             {` `}
                 <a className="text-info" href="https://www.gatsbyjs.org">Gatsby</a></i>
+=======
+              <hr />
+              <p className="d-inline">
+                © {new Date().getFullYear()}{" "}
+                <a className="text-info" href="https://willjw3.github.io/">
+                  willjw3
+                </a>
+                , All Rights Reserved.
+              </p>
+              <p className="mt-5 text-muted d-inline">
+                <i>
+                  {" "}
+                  Built with
+                  {` `}
+                  <a className="text-info" href="https://www.gatsbyjs.org">
+                    Gatsby
+                  </a>
+                </i>
+>>>>>>> b4e9f4f3f2bab76c3873d6a12b5a890c982f02d8
               </p>
             </footer>
           </div>

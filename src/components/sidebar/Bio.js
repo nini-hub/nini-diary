@@ -4,6 +4,7 @@ import "./sidebar.css"
 import willjw3 from "../../images/willjw3.jpg"
 
 const Bio = ({ author, tagline }) => {
+<<<<<<< HEAD
 
     return (
         <div className="bio-main w-75">
@@ -15,3 +16,20 @@ const Bio = ({ author, tagline }) => {
 }
 
 export default Bio
+=======
+  return (
+    <div className="bio-main w-75">
+      <img
+        src={willjw3}
+        style={{ maxWidth: `100px` }}
+        className="profile-img"
+        alt=""
+      />
+      <h3 className="mt-2 author-bio">{author}</h3>
+      <small className="text-muted">{tagline}</small>
+    </div>
+  )
+}
+
+export default Bio
+>>>>>>> b4e9f4f3f2bab76c3873d6a12b5a890c982f02d8
