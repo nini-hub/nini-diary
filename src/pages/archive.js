@@ -23,8 +23,6 @@ const ArchivePage = ({ data }) => {
               tag={label.tag}
               tech={label.tech}
               name={label.name}
-              size={label.size}
-              color={label.color}
             />
           )
         }
@@ -47,7 +45,7 @@ const ArchivePage = ({ data }) => {
         ]}
       />
       <div className="index-main">
-        <div className="sidebar px-4 py-2">
+        <div className="sidebar border-right px-1 py-2">
           <Sidebar />
         </div>
         <div className="post-list-main">
@@ -60,11 +58,11 @@ const ArchivePage = ({ data }) => {
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">
-                  <i>Posted on {post.node.frontmatter.date}</i>
+                  <i>发表于 {post.node.frontmatter.date}</i>
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">
-                  <small className="d-inline-block ml-3"> Read full post</small>
+                  <small className="d-inline-block ml-3"> 阅读全文</small>
                 </Link>
                 <div className="d-block">{getTechTags(tags)}</div>
               </div>
@@ -86,8 +84,6 @@ export const pageQuery = graphql`
           tag
           tech
           name
-          size
-          color
         }
       }
     }
@@ -99,7 +95,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 120)
           html
           id
           frontmatter {

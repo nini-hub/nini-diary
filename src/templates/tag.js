@@ -15,9 +15,8 @@ const Tag = ({ pageContext, data }) => {
   console.log(pageContext.tag)
   const { tag } = pageContext
   const { totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+
+  const tagHeader = `"${tag}" 下共有 ${totalCount} 篇博客`
 
   const getTechTags = tags => {
     const techTags = []
@@ -30,8 +29,6 @@ const Tag = ({ pageContext, data }) => {
               tag={label.tag}
               tech={label.tech}
               name={label.name}
-              size={label.size}
-              color={label.color}
             />
           )
         }
@@ -54,7 +51,7 @@ const Tag = ({ pageContext, data }) => {
         ]}
       />
       <div className="index-main">
-        <div className="sidebar px-4 py-2">
+        <div className="sidebar  border-right px-1 py-2">
           <Sidebar />
         </div>
 
@@ -70,11 +67,11 @@ const Tag = ({ pageContext, data }) => {
                   <h2 className="heading">{post.node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">
-                  Posted on {post.node.frontmatter.date}
+                  发表于 {post.node.frontmatter.date}
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">
-                  <small className="d-inline-block ml-3"> Read full post</small>
+                  <small className="d-inline-block ml-3"> 阅读全文</small>
                 </Link>
                 <div className="d-block">{getTechTags(tags)}</div>
               </div>
@@ -116,8 +113,6 @@ export const pageQuery = graphql`
           tag
           tech
           name
-          size
-          color
         }
       }
     }
@@ -129,7 +124,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 120)
           html
           id
           frontmatter {

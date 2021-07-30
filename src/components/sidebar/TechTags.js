@@ -35,8 +35,6 @@ const TechTags = props => {
               tag={label.tag}
               tech={label.tech}
               name={label.name}
-              size={label.size}
-              color={label.color}
             />
           )
         }
@@ -47,7 +45,7 @@ const TechTags = props => {
 
   return (
     <>
-      <h4>Tech Topics</h4>
+      <h4>分类</h4>
       <div className="d-block">{getTechTags(tags)}</div>
     </>
   )

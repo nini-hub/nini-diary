@@ -50,7 +50,7 @@ small {
 
 @media only screen and (max-width: 850px) {
   .bottom-bar{display: flex;}
-  .social-links{display: none;}
+  /* .social-links{display: none;} */
   .mobile-pages-main{display: block;}
   .mobile-bio-main{
     display: flex;

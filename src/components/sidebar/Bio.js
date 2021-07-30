@@ -12,7 +12,7 @@ const Bio = ({ author, tagline }) => {
         className="profile-img"
         alt=""
       />
-      <h3 className="mt-2 author-bio">{author}</h3>
+      <h3 className="mt-2 author-bio mb-0">{author}</h3>
       <small className="text-muted">{tagline}</small>
     </div>
   )

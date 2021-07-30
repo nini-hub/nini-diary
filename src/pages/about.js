@@ -24,7 +24,7 @@ const AboutPage = props => {
     <Layout>
       <SEO title="About" />
       <div className="post-page-main">
-        <div className="sidebar px-4 py-2">
+        <div className="sidebar border-right px-1 py-2">
           <Sidebar />
         </div>
 
@@ -58,34 +58,8 @@ const AboutPage = props => {
                 Tech tags designed for web developers
               </p>
               <div className="ml-5">
-                <TechTag
-                  tag="react"
-                  tech="React"
-                  name={tags["react"]}
-                  size={20}
-                  color="deepskyblue"
-                />
-                <TechTag
-                  tag="nodejs"
-                  tech="Node.js"
-                  name={tags["nodejs"]}
-                  size={20}
-                  color="lightgreen"
-                />
-                <TechTag
-                  tag="html"
-                  tech="HTML"
-                  name={tags["html"]}
-                  size={20}
-                  color="darkorange"
-                />
-                <TechTag
-                  tag="css"
-                  tech="CSS"
-                  name={tags["css"]}
-                  size={20}
-                  color="teal"
-                />
+                <TechTag tag="gatsby" tech="gatsby" name="gatsby.png" />
+                <TechTag tag="碎碎念" tech="碎碎念" name="speech-bubble.png" />
               </div>
             </div>
             <div className="mt-4">
@@ -128,8 +102,6 @@ export const pageQuery = graphql`
           tag
           tech
           name
-          size
-          color
         }
       }
     }

@@ -7,14 +7,10 @@ module.exports = {
     url: siteConfig.url,
     title: siteConfig.title,
     tagline: siteConfig.tagline,
-    description: `A blog template for web developers that's ready to go out of the box. Feel free to modify it to your liking.`,
+    description: `一个不定期更新的总在碎碎念的小菜鸡`,
     author: siteConfig.author.name,
     contacts: {
-      linkedin: siteConfig.author.contacts.linkedin,
       github: siteConfig.author.contacts.github,
-      stackoverflow: siteConfig.author.contacts.stackoverflow,
-      freecodecamp: siteConfig.author.contacts.freecodecamp,
-      twitter: siteConfig.author.contacts.twitter,
     },
     labels: siteConfig.labels,
   },
@@ -51,12 +47,20 @@ module.exports = {
             }
           }, `gatsby-remark-responsive-iframe`,
           {
+            resolve: "gatsby-remark-graph",
+            options: {
+              // this is the language in your code-block that triggers mermaid parsing
+              language: "mermaid", // default
+              theme: "default", // could also be dark, forest, or neutral
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 200,
+              maxWidth: 600,
             },
           },
         ],

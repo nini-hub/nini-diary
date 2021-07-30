@@ -4,26 +4,18 @@ import "./tags.css"
 import { Link } from "gatsby"
 
 const TechTag = props => {
-  const { tag, tech, name, size, color } = props
+  const { tag, tech, name } = props
 
   return (
     <div className="d-inline-block p-1">
-      <Link to={`/tags/${tag}/`}>
+      <Link to={`/tags/${tech}/`}>
         <button className="tech-tag text-white">
-          <p className="d-inline">{tech} </p>
-          <div className="d-inline" style={{ fontSize: size, color: color }}>
-            <svg
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              width={size}
-              height={size}
-              style={{ fill: `${color}` }}
-            >
-              <title>{tech}</title>
-              <path d={name} />
-            </svg>
-          </div>
+          <p className="d-inline">{tag} </p>
+          <img
+            src={require(`../../images/icons/${name}`)}
+            style={{ width: 18, margin: 0 }}
+            alt=""
+          />
         </button>
       </Link>
     </div>
