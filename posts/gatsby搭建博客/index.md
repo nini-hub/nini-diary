@@ -50,6 +50,38 @@ published: true
 接下来的设置非必需
 至此你就得到了一个默认域名 `xxx.gatsbyjs.io`,每一次 push 都会自动部署 `xxx.gatsbyjs.io`
 
+### 使用Netlify CMS 添加博客文章
+如果您不熟悉Netlify CMS，您要做的第一件事就是熟悉它。(Netlify CMS) (https://www.netlifycms.org/) 
+
+首先需要安装`gatsby-plugin-netlify-cms` 插件和 `netlify-cms-app `
+您所需要做的就是设置您的站点，以便使用[Netlify](https://www.netlify.com/)这样的平台进行持续部署，并通过以下步骤将Netlify CMS连接到您的GitHub仓库
+#### Netlify CMS连接到您的GitHub仓库
+1. 进入 dashborder，点击 New site from git
+![image](./netlify/newSite.png)
+
+2. 选择从github 导入，并选择对应仓库
+![image](./netlify/selectgit.png)
+不用修改默认设置，点击 Deploy site 即可
+#### 设置 Netlify 的 identity 和 Git Gateway 来管理站点的CMS管理员用户，步骤如下：
+1. 进入 site settings / identity，点击 enable identity。
+
+2. 设置 Registration preferences。这边选择 Open 或者 invite
+![image](./netlify/registration.png)
+
+3. 设置 External providers，选择 github
+![image](./netlify/gitprovide.png)
+使用默认配置即可
+
+4. 进入 services，设置 Git Gateway, 点击 Generate access token in GitHub，成一个API访问令牌
+![image](./netlify/service.png)
+* 注意：在本例中，我们将Roles字段留空，这意味着任何登录的用户都可以访问CMS
+
+成功界面如下
+![image](./netlify/serviceOk.png)
+
+
+至此你就得到了一个默认域名 `https://xxx.netlify.app/`,每一次 push 都会自动部署 `https://xxx.netlify.app/`；且进入`https://xxx.netlify.app/admin` 可以对博客进行增删改；
+![image](./netlify/success.png)
 ### 遇到的坑
 
 ##### mermaid 语法无法使用
