@@ -75,13 +75,22 @@ const IndexPage = ({ data }) => {
               </div>
             )
           })}
-          {hasNextPage && (
+
+          <div className="mt-4 row justify-content-between">
+            {!hasNextPage && (
+              <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+                <span className="text-dark ml-5">下一页 →</span>
+              </Link>
+            )}
+          </div>
+
+          {/* {hasNextPage && (
             <div className="mt-4 text-right">
               <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
                 <span className="text-dark">下一页 →</span>
               </Link>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </Layout>

@@ -48,14 +48,23 @@ const Sidebar = () => {
               tagline={data.site.siteMetadata.tagline}
             />
             <div className="page-links mt-3">
-              <Link to="/">
-                <span className="text-dark d-block py-1">主页</span>
+              <Link to="/" className="d-block">
+                <svg className="icon">
+                  <use href={`#icon-tubiaozhizuomobanyihuifu-`}></use>
+                </svg>
+                <span className="text-dark d-inline-block py-1">主页</span>
               </Link>
-              <Link to="/about">
-                <span className="text-dark d-block py-1">关于我</span>
+              <Link to="/about" className="d-block">
+                <svg className="icon">
+                  <use href={`#icon-guanyuwomen`}></use>
+                </svg>
+                <span className="text-dark d-inline-block py-1">关于我</span>
               </Link>
-              <Link to="/archive">
-                <span className="text-dark d-block py-1">文章</span>
+              <Link to="/archive" className="d-block">
+                <svg className="icon">
+                  <use href={`#icon-icon_A`}></use>
+                </svg>
+                <span className="text-dark d-inline-block py-1">文章</span>
               </Link>
             </div>
             <div className="tech-tags mt-4">

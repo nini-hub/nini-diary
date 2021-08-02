@@ -12,7 +12,7 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
     <header
       className="head-main"
       style={{
-        background: `black`,
+        background: `#617284`,
       }}
     >
       <div
@@ -37,7 +37,7 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
       </div>
       {/* <MobileSocialLinks contacts={contacts} /> */}
       <MobilePageLinks />
-      <MobileBio author={author} />
+      <MobileBio author={author} tagline={tagline} />
     </header>
   )
 }

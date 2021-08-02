@@ -1,7 +1,7 @@
 ---
 title: 建立CI/CD流水线
 date: '2020-10-29'
-tags: ["初体验","CICD"]
+tags: ["CICD","初体验"]
 published: true
 ---
 

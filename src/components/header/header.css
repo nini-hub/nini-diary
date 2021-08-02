@@ -22,7 +22,7 @@
 
 .bottom-bar {
   width: 100%;
-  background: black;
+  background:#617284;
   display: none;
   flex-direction: row;
   justify-content: space-around;
@@ -46,6 +46,13 @@ small {
   display: none;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 
 
 @media only screen and (max-width: 850px) {

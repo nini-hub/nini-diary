@@ -8,14 +8,20 @@ const TechTag = props => {
 
   return (
     <div className="d-inline-block p-1">
-      <Link to={`/tags/${tech}/`}>
+      <Link to={`/tags/${tech.toLowerCase()}/`}>
         <button className="tech-tag text-white">
           <p className="d-inline">{tag} </p>
-          <img
+          {/* <svg className="home-content3__icon" aria-hidden="true">
+            <use href={item.icon} />
+          </svg> */}
+          <svg className="icon">
+            <use href={`#${name}`}></use>
+          </svg>
+          {/* <img
             src={require(`../../images/icons/${name}`)}
             style={{ width: 18, margin: 0 }}
             alt=""
-          />
+          /> */}
         </button>
       </Link>
     </div>

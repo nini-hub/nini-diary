@@ -3,9 +3,17 @@ h4 {
 }
 
 .tech-tag {
-    background: #ccc;
+    background: #617284;
     border-radius: 10%;
     border-color: transparent;
     font-family: "Raleway";
     font-size: .75rem;
 }
+
+.icon {
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }

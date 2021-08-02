@@ -15,58 +15,58 @@ module.exports = {
   labels: [
     {
       tag: "Gatsby",
-      tech: "gatsby",
-      name: "gatsby.png",
+      tech: "Gatsby",
+      name: "icon-gatsby",
     },
     {
       tag: "小程序",
       tech: "小程序",
-      name: "小程序.png",
+      name: "icon-xiaochengxu",
     },
     {
       tag: "CICD",
-      tech: "cicd",
-      name: "流水线.png",
+      tech: "CICD",
+      name: "icon-liushuixian",
     },
     {
       tag: "CSS",
-      tech: "css",
-      name: "css.png",
+      tech: "CSS",
+      name: "icon-CSS",
     },
     {
       tag: "nodejs",
       tech: "nodejs",
-      name: "nodejs.png",
+      name: "icon-nodejs",
     },
     {
       tag: "自动化测试",
       tech: "自动化测试",
-      name: "ceshi.png",
+      name: "icon-ceshi",
     },
     {
       tag: "碎碎念",
       tech: "碎碎念",
-      name: "speech-bubble.png",
+      name: "icon-speech-bubble",
     },
     {
       tag: "草稿篇",
       tech: "草稿篇",
-      name: "caogao-tianchong.png",
+      name: "icon-caogao-tianchong",
     },
     {
       tag: "小总结",
       tech: "小总结",
-      name: "zongjiebaogao.png",
+      name: "icon-zongjiebaogao",
     },
     {
       tag: "入门笔记",
       tech: "入门笔记",
-      name: "xinshouzhinan.png",
+      name: "icon-xinshouzhinan",
     },
     {
       tag: "初体验",
       tech: "初体验",
-      name: "tubiaozhizuosvg-41.png",
+      name: "icon-tubiaozhizuosvg-41",
     },
   ],
 }

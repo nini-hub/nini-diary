@@ -58,7 +58,7 @@ const PostList = props => {
           {posts.map(post => {
             const tags = post.node.frontmatter.tags
             return (
-              <div key={post.node.id} className="container mt-5">
+              <div key={post.node.id} className="container mt-5 mx-5">
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
@@ -74,10 +74,12 @@ const PostList = props => {
             )
           })}
           <div className="mt-4 row justify-content-between">
-            {!isFirst && (
+            {!isFirst ? (
               <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>
                 <span className="text-dark">← 上一页</span>
               </Link>
+            ) : (
+              <span style={{ color: `#ccc` }}>← 上一页</span>
             )}
             {!isLast && (
               <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>

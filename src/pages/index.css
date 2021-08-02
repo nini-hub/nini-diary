@@ -4,12 +4,14 @@ p, .title {
 }
 
 .index-main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  display: flex;
 } 
 
 .sidebar {
-    width: 90%;
+  width: 20%;
+}
+.post-list-main {
+  width: 80%;
 }
 
 
