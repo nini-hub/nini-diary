@@ -4,11 +4,16 @@
 }
 
 .sidebar {
-  width: 23%;
+  width: 25%;
+  max-width: 250px;
 }
 
 .post-main {
-  width: 80%;
+  width: 75%;
+}
+
+.gatsby-highlight:hover > .language-text::after {
+  content: "12121212";
 }
 
 

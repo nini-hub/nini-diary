@@ -99,7 +99,7 @@ published: true
 
 将插件添加到您的 gatsby-config.js.
 
-```
+```js
 {
   plugins: [
     {

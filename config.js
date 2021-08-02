@@ -2,7 +2,7 @@
 
 module.exports = {
   url: "https://ninidiary.gatsbyjs.io/",
-  title: "Developer Diary",
+  title: "碎碎念合集",
   tagline: "不知道说点什么",
   copyright: "© 2021 nini-hub, All rights reserved",
   author: {

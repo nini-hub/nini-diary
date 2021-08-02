@@ -26,7 +26,7 @@ published: true
 
 示例如下
 
-```
+```css
 html {
   scrollbar-color: linear-gradient(to bottom,#ff8a00,#da1b60);
   scrollbar-width: 10px;

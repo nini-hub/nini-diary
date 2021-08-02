@@ -63,7 +63,7 @@ const PostList = props => {
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">
-                  <i>发表于 {post.node.frontmatter.date}</i>
+                  发表于 {post.node.frontmatter.date}
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">

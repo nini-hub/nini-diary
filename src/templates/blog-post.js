@@ -44,9 +44,7 @@ const BlogPost = props => {
             <h2 className="heading">{post.frontmatter.title}</h2>
             <div className="d-block">{getTechTags(tags)}</div>
             <br />
-            <small>
-              <i>发表于 </i> {post.frontmatter.date}
-            </small>
+            <small>发表于 {post.frontmatter.date}</small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
