@@ -56,11 +56,7 @@ const IndexPage = ({ data }) => {
           {posts.map(post => {
             const tags = post.node.frontmatter.tags
             return (
-              <div
-                key={post.node.id}
-                className="container mt-5 pb-3"
-                style={{ borderBottom: "1px solid #ccc" }}
-              >
+              <div key={post.node.id} className="container mt-5 pb-3">
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
@@ -76,8 +72,9 @@ const IndexPage = ({ data }) => {
             )
           })}
 
-          <div className="mt-4 row justify-content-between">
-            {!hasNextPage && (
+          <div className="mx-1 mt-3 row justify-content-between">
+            <span style={{ color: `#ccc` }}>← 上一页</span>
+            {hasNextPage && (
               <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
                 <span className="text-dark ml-5">下一页 →</span>
               </Link>
@@ -123,7 +120,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
             tags
           }
           fields {

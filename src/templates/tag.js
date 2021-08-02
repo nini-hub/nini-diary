@@ -57,12 +57,12 @@ const Tag = ({ pageContext, data }) => {
 
         <div className="post-list-main">
           <i>
-            <h2 className="heading mx-5">{tagHeader}</h2>
+            <h2 className="heading mx-3">{tagHeader}</h2>
           </i>
           {posts.map(post => {
             const tags = post.node.frontmatter.tags
             return (
-              <div key={post.node.id} className="container mt-5 mx-5">
+              <div key={post.node.id} className="container mt-5 mx-3">
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="heading">{post.node.frontmatter.title}</h2>
                 </Link>
@@ -129,7 +129,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM, YYYY")
+            date(formatString: "YYYY-MM-DD")
             tags
           }
           fields {

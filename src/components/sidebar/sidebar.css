@@ -18,7 +18,6 @@
 }
 
 .page-links {
-    font-family: "Raleway";
     font-size: .75rem;
 }
 
@@ -28,10 +27,6 @@
      box-shadow: 1px 1px 3px;
 }
 
-small, h3, p {
-    font-family: 'Raleway';
-    
-}
 
 .author-bio {
     font-size: 2vw;

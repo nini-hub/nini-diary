@@ -38,7 +38,7 @@ const BlogPost = props => {
         <div className="sidebar border-right px-1 py-2">
           <Sidebar />
         </div>
-        <div className="post-main mx-5">
+        <div className="post-main mx-3">
           <SEO title={post.frontmatter.title} />
           <div className="mt-3">
             <h2 className="heading">{post.frontmatter.title}</h2>
@@ -72,7 +72,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         tags
       }
     }

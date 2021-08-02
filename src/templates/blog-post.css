@@ -3,12 +3,8 @@
   justify-content: flex-start;
 }
 
-.heading {
-  font-family: "Raleway";
-}
-
 .sidebar {
-  width: 20%;
+  width: 23%;
 }
 
 .post-main {

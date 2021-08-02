@@ -58,7 +58,7 @@ const PostList = props => {
           {posts.map(post => {
             const tags = post.node.frontmatter.tags
             return (
-              <div key={post.node.id} className="container mt-5 mx-5">
+              <div key={post.node.id} className="container mt-5 mx-3">
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
@@ -73,7 +73,7 @@ const PostList = props => {
               </div>
             )
           })}
-          <div className="mt-4 row justify-content-between">
+          <div className="mx-4 mt-4 row justify-content-between">
             {!isFirst ? (
               <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>
                 <span className="text-dark">← 上一页</span>
@@ -83,7 +83,7 @@ const PostList = props => {
             )}
             {!isLast && (
               <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-                <span className="text-dark ml-5">下一页 →</span>
+                <span className="text-dark">下一页 →</span>
               </Link>
             )}
           </div>
@@ -120,7 +120,7 @@ export const listQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
             tags
           }
           fields {

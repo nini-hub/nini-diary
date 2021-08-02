@@ -16,7 +16,7 @@ const AboutPage = props => {
           <Sidebar />
         </div>
 
-        <div className="post-main mx-5">
+        <div className="post-main mx-3">
           <SEO title="About" />
           啥也没有哈哈哈哈哈哈哈
         </div>
