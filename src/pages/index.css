@@ -5,10 +5,24 @@
 } 
 
 .sidebar {
-  width: 20%;
+  width: 25%;
 }
 .post-list-main {
+  width: 60%;
+}
+
+.rightBar {
+  width: 15%;
+}
+
+.rightBar input {
   width: 80%;
+  font-size: 16px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 13px;
+  line-height: 30px;
 }
 
 

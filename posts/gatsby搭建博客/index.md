@@ -62,7 +62,9 @@ published: true
 2. 选择从github 导入，并选择对应仓库
 ![image](./netlify/selectgit.png)
 不用修改默认设置，点击 Deploy site 即可
-#### 设置 Netlify 的 identity 和 Git Gateway 来管理站点的CMS管理员用户，步骤如下：
+
+#### 设置 Netlify 的 identity 和 Git Gateway 来管理站点的CMS管理员用户
+
 1. 进入 site settings / identity，点击 enable identity。
 
 2. 设置 Registration preferences。这边选择 Open 或者 invite

@@ -6,13 +6,14 @@ import "./index.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
+import RightBar from "../components/sidebar/RightBar"
 import TechTag from "../components/tags/TechTag"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
   const currentPage = 1
-  const postsPerPage = 3 // see limit in graphql query below
+  const postsPerPage = 5 // see limit in graphql query below
   const nextPage = "/" + (currentPage + 1).toString()
   const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
 
@@ -38,7 +39,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Home"
+        title="首页"
         keywords={[
           `gatsby`,
           `javascript`,
@@ -60,9 +61,17 @@ const IndexPage = ({ data }) => {
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
-                <small className="d-block text-info">
+                <div className="mx-0 row justify-content-between mb-3">
+                  <small className="text-info">
+                    发表于 {post.node.frontmatter.date}
+                  </small>
+                  <small className="text-info">
+                    阅读量： {post.node.timeToRead}
+                  </small>
+                </div>
+                {/* <small className="d-block text-info">
                   发表于 {post.node.frontmatter.date}
-                </small>
+                </small> */}
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> 阅读全文</small>
@@ -89,6 +98,9 @@ const IndexPage = ({ data }) => {
             </div>
           )} */}
         </div>
+        <div className="border-left rightBar px-2">
+          <RightBar />
+        </div>
       </div>
     </Layout>
   )
@@ -108,7 +120,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 3
+      limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true } } }
     ) {
@@ -118,6 +130,7 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 120)
           html
           id
+          timeToRead
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")

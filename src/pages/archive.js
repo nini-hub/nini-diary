@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
+import RightBar from "../components/sidebar/RightBar"
 
 const ArchivePage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -34,7 +35,7 @@ const ArchivePage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Archive"
+        title="文章"
         keywords={[
           `gatsby`,
           `javascript`,
@@ -57,9 +58,17 @@ const ArchivePage = ({ data }) => {
                 <Link to={post.node.fields.slug} className="text-dark">
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
-                <small className="d-block text-info">
+                {/* <small className="d-block text-info">
                   发表于 {post.node.frontmatter.date}
-                </small>
+                </small> */}
+                <div className="mx-0 row justify-content-between mb-3">
+                  <small className="text-info">
+                    发表于 {post.node.frontmatter.date}
+                  </small>
+                  <small className="text-info">
+                    阅读量： {post.node.timeToRead}
+                  </small>
+                </div>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> 阅读全文</small>
@@ -68,6 +77,9 @@ const ArchivePage = ({ data }) => {
               </div>
             )
           })}
+        </div>
+        <div className="border-left rightBar px-2">
+          <RightBar />
         </div>
       </div>
     </Layout>
@@ -98,6 +110,7 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 120)
           html
           id
+          timeToRead
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")

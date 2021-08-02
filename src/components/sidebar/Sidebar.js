@@ -42,7 +42,7 @@ const Sidebar = () => {
       `}
       render={data => (
         <>
-          <div className="sidebar-main ">
+          <div className="sidebar-main">
             <Bio
               author={data.site.siteMetadata.author}
               tagline={data.site.siteMetadata.tagline}
@@ -67,7 +67,7 @@ const Sidebar = () => {
                 <span className="text-dark d-inline-block py-1">文章</span>
               </Link>
             </div>
-            <div className="tech-tags mt-4">
+            <div className="mt-4" style={{ width: 200 }}>
               <TechTags
                 labels={data.site.siteMetadata.labels}
                 posts={data.allMarkdownRemark.edges}

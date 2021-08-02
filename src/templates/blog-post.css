@@ -9,11 +9,21 @@
 }
 
 .post-main {
-  width: 75%;
+  width: 60%;
 }
 
-.gatsby-highlight:hover > .language-text::after {
-  content: "12121212";
+.rightBar {
+  width: 15%;
+}
+
+.rightBar input {
+  width: 80%;
+  font-size: 16px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 13px;
+  line-height: 30px;
 }
 
 

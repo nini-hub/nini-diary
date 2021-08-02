@@ -23,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
           node {
             frontmatter {
               tags
+              date(formatString:"YYYY-MM")
             }
             fields {
               slug
@@ -69,7 +70,39 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        const postsPerPage = 3
+         // Tag pages:
+         let formatDatas = []
+         // Iterate through each post, putting all found tags into `tags`
+         _.each(posts, edge => {
+           if (_.get(edge, "node.frontmatter.date")) {
+              formatDatas = formatDatas.concat(edge.node.frontmatter.date)
+           }
+         })
+ 
+         // Eliminate duplicate tags
+         formatDatas = _.uniq(formatDatas)
+ 
+         // Make tag pages
+         formatDatas.forEach(date => {
+            const arr = date.split('-');
+            let year = arr[0];
+            let month = arr[1]
+            if(month == "12") {
+              year = year + 1
+              month = "1"
+            }
+            const nextMonth = `${year}-${month+1}`
+           createPage({
+             path: `/date/${_.kebabCase(date)}/`,
+             component: path.resolve("src/templates/date.js"),
+             context: {
+               date,
+               nextMonth
+             },
+           })
+         })
+
+        const postsPerPage = 5
         const numPages = Math.ceil(posts.length / postsPerPage)
 
         Array.from({ length: numPages }).forEach((_, i) => {
