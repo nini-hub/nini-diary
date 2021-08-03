@@ -7,6 +7,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.float-date {
+  top: 400px;
+  position: fixed;
+  left: 85%;
+  font-size: 3rem;
+  color: rgb(36, 170, 125);
+}
+
+.float-date-list {
+  background-color: hsl(211deg 22% 80%);
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  position: fixed;
+  top: 420px;
+  left: 60%;
+}
+
+.index-main {
+  display: flex;
+} 
+
+.sidebar {
+  width: 20%;
+}
+.post-list-main {
+  width: 65%;
+}
+.rightBar {
+  width: 15%;
+}
+@media only screen and (max-width: 568px) {
+  .sidebar,.rightBar{display: none;}
+  .index-main > .post-list-main{
+    width: 100%;
+  }
+}
 article,
 aside,
 details,

@@ -1,10 +1,45 @@
 {
-  "id": "",
-  "name": "",
+  "id": "2712198",
+  "name": "my",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "4685760",
+      "name": "收缩",
+      "font_class": "Group-",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "5342985",
+      "name": "展开",
+      "font_class": "xingzhuanggongnengtubiao-",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "1215362",
+      "name": "tag",
+      "font_class": "tag",
+      "unicode": "e71f",
+      "unicode_decimal": 59167
+    },
+    {
+      "icon_id": "2279236",
+      "name": "箭头",
+      "font_class": "jiantou-copy",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "2674929",
+      "name": "箭头 下",
+      "font_class": "jiantouxia",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
     {
       "icon_id": "1237172",
       "name": "讲话气泡",

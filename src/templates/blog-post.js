@@ -1,12 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import "./blog-post.css"
+import Layout from "@/components/layout"
+import SEO from "@/components/seo"
 
-import Sidebar from "../components/sidebar/Sidebar"
-import RightBar from "../components/sidebar/RightBar"
-import TechTag from "../components/tags/TechTag"
+import TechTag from "@/components/tags/TechTag"
 
 const BlogPost = props => {
   const post = props.data.markdownRemark
@@ -35,28 +32,17 @@ const BlogPost = props => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <div className="post-page-main">
-        <div className="sidebar border-right px-1 py-2">
-          <Sidebar />
+
+      <SEO title={post.frontmatter.title} />
+      <div className="mt-3">
+        <h2 className="heading">{post.frontmatter.title}</h2>
+        <div className="d-block">{getTechTags(tags)}</div>
+        <br />
+        <div className="mx-0 row justify-content-between mb-3">
+          <small className="text-info">发表于 {post.frontmatter.date}</small>
+          <small className="text-info">阅读量： {post.timeToRead}</small>
         </div>
-        <div className="post-main mx-3">
-          <SEO title={post.frontmatter.title} />
-          <div className="mt-3">
-            <h2 className="heading">{post.frontmatter.title}</h2>
-            <div className="d-block">{getTechTags(tags)}</div>
-            <br />
-            <div className="mx-0 row justify-content-between mb-3">
-              <small className="text-info">
-                发表于 {post.frontmatter.date}
-              </small>
-              <small className="text-info">阅读量： {post.timeToRead}</small>
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
-        </div>
-        <div className="border-left rightBar px-2">
-          <RightBar />
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )

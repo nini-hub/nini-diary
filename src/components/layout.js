@@ -5,14 +5,20 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./header/header"
 import "./layout.css"
+import values from "lodash/values"
+import groupBy from "lodash/groupBy"
+import Sidebar from "@/components/sidebar/Sidebar"
+import RightBar from "@/components/sidebar/RightBar"
 
 const Layout = ({ children }) => {
+  const [visible, setVisible] = useState(false)
+  console.log(visible)
   return (
     <StaticQuery
       query={graphql`
@@ -27,24 +33,66 @@ const Layout = ({ children }) => {
               }
             }
           }
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  date(formatString: "YYYY-MM")
+                }
+              }
+            }
+          }
         }
       `}
-      render={data => (
-        <>
-          <Header
-            siteTitle={data.site.siteMetadata.title}
-            tagline={data.site.siteMetadata.tagline}
-            author={data.site.siteMetadata.author}
-            contacts={data.site.siteMetadata.contacts}
-          />
-          <div
-            style={{
-              margin: `0 auto`,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
-            }}
-          >
-            <main className="p-4">{children}</main>
+      render={data => {
+        const arr = []
+        data.allMarkdownRemark.edges?.map(edge => {
+          arr.push(edge.node.frontmatter.date)
+        })
+        return (
+          <>
+            <Header
+              siteTitle={data.site.siteMetadata.title}
+              tagline={data.site.siteMetadata.tagline}
+              author={data.site.siteMetadata.author}
+              contacts={data.site.siteMetadata.contacts}
+            />
+            <div
+              className="float-date d-block d-sm-none"
+              onClick={() => setVisible(!visible)}
+            >
+              {visible ? (
+                <svg className="icon">
+                  <use href="#icon-xingzhuanggongnengtubiao-"></use>
+                </svg>
+              ) : (
+                <svg className="icon">
+                  <use href="#icon-Group-"></use>
+                </svg>
+              )}
+            </div>
+            <div
+              className="float-date-list py-2 d-sm-none"
+              style={{
+                display: visible ? "block" : "none",
+              }}
+            >
+              {values(groupBy(arr)).map(d => (
+                <Link to={`/date/${d[0]}`} key={d[0]} className="d-block">
+                  {d[0]}
+                  <span className="text-dark">({d.length})</span>
+                </Link>
+              ))}
+            </div>
+            <div className="index-main mt-2 container">
+              <div className="sidebar border-right px-1 py-2">
+                <Sidebar />
+              </div>
+              <div className="post-list-main">{children}</div>
+              <div className="border-left rightBar px-2">
+                <RightBar />
+              </div>
+            </div>
             <footer className="text-center">
               <hr />
               <p className="d-inline">
@@ -52,9 +100,10 @@ const Layout = ({ children }) => {
                 Reserved.
               </p>
             </footer>
-          </div>
-        </>
-      )}
+            {/* 悬浮 点击打开日期 */}
+          </>
+        )
+      }}
     />
   )
 }

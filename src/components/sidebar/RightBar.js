@@ -1,8 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 
-import TechTags from "./TechTags"
 import uniq from "lodash/uniq"
+import values from "lodash/values"
+import groupBy from "lodash/groupBy"
 
 const Right = () => {
   return (
@@ -28,11 +29,11 @@ const Right = () => {
         return (
           <div style={{ position: "fixed" }}>
             {/* <h4 className="mb-1">搜索</h4>
-          <input type="text" placeholder="按下回车进行搜索"/> */}
+            <input type="text" placeholder="按下回车进行搜索"/> */}
             <h4 className="mb-1 mt-4">随笔档案</h4>
-            {uniq(arr)?.map((date, index) => (
-              <Link to={`/date/${date}`} key={index} className="d-block">
-                {date}
+            {values(groupBy(arr)).map(d => (
+              <Link to={`/date/${d[0]}`} key={d[0]} className="d-block">
+                {d[0]}({d.length})
               </Link>
             ))}
           </div>

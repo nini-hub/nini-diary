@@ -3,11 +3,10 @@ import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
-import RightBar from "../components/sidebar/RightBar"
+import Layout from "@/components/layout"
+import SEO from "@/components/seo"
+
+import TechTag from "@/components/tags/TechTag"
 
 const ArchivePage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -34,54 +33,35 @@ const ArchivePage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO
-        title="文章"
-        keywords={[
-          `gatsby`,
-          `javascript`,
-          `react`,
-          `web development`,
-          `blog`,
-          `graphql`,
-        ]}
-      />
-      <div className="index-main">
-        <div className="sidebar border-right px-1 py-2">
-          <Sidebar />
-        </div>
-        <div className="post-list-main">
-          <h2 className="heading mt-3">All Posts</h2>
-          {posts.map(post => {
-            const tags = post.node.frontmatter.tags
-            return (
-              <div key={post.node.id} className="container mt-5">
-                <Link to={post.node.fields.slug} className="text-dark">
-                  <h2 className="title">{post.node.frontmatter.title}</h2>
-                </Link>
-                {/* <small className="d-block text-info">
+      <SEO title="文章" />
+
+      <h2 className="heading mt-3">All Posts</h2>
+      {posts.map(post => {
+        const tags = post.node.frontmatter.tags
+        return (
+          <div key={post.node.id} className="container mt-5">
+            <Link to={post.node.fields.slug} className="text-dark">
+              <h2 className="title">{post.node.frontmatter.title}</h2>
+            </Link>
+            {/* <small className="d-block text-info">
                   发表于 {post.node.frontmatter.date}
                 </small> */}
-                <div className="mx-0 row justify-content-between mb-3">
-                  <small className="text-info">
-                    发表于 {post.node.frontmatter.date}
-                  </small>
-                  <small className="text-info">
-                    阅读量： {post.node.timeToRead}
-                  </small>
-                </div>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                <Link to={post.node.fields.slug} className="text-primary">
-                  <small className="d-inline-block ml-3"> 阅读全文</small>
-                </Link>
-                <div className="d-block">{getTechTags(tags)}</div>
-              </div>
-            )
-          })}
-        </div>
-        <div className="border-left rightBar px-2">
-          <RightBar />
-        </div>
-      </div>
+            <div className="mx-0 row justify-content-between mb-3">
+              <small className="text-info">
+                发表于 {post.node.frontmatter.date}
+              </small>
+              <small className="text-info">
+                阅读量： {post.node.timeToRead}
+              </small>
+            </div>
+            <p className="mt-3 d-inline">{post.node.excerpt}</p>
+            <Link to={post.node.fields.slug} className="text-primary">
+              <small className="d-inline-block ml-3"> 阅读全文</small>
+            </Link>
+            <div className="d-block">{getTechTags(tags)}</div>
+          </div>
+        )
+      })}
     </Layout>
   )
 }

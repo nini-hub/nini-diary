@@ -5,6 +5,7 @@ import TechTag from "../tags/TechTag"
 const TechTags = props => {
   const labels = props.labels
   const posts = props.posts
+  const title = props?.title
 
   const labelCount = labels.map(label => {
     let count = 0
@@ -45,7 +46,7 @@ const TechTags = props => {
 
   return (
     <>
-      <h4 className="mb-1">分类</h4>
+      {title && <h4 className="mb-1">{title}</h4>}
       <div className="d-block">{getTechTags(tags)}</div>
     </>
   )
