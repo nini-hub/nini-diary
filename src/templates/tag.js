@@ -48,7 +48,7 @@ const Tag = ({ pageContext, data }) => {
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="heading">{post.node.frontmatter.title}</h2>
             </Link>
-            <div className="mx-0 row justify-content-between mb-3">
+            <div className="mx-0 row justify-content-between">
               <small className="text-info">
                 发表于 {post.node.frontmatter.date}
               </small>

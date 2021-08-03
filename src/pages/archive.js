@@ -46,7 +46,7 @@ const ArchivePage = ({ data }) => {
             {/* <small className="d-block text-info">
                   发表于 {post.node.frontmatter.date}
                 </small> */}
-            <div className="mx-0 row justify-content-between mb-3">
+            <div className="mx-0 row justify-content-between">
               <small className="text-info">
                 发表于 {post.node.frontmatter.date}
               </small>

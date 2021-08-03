@@ -9,14 +9,20 @@ body {
 }
 
 .float-date {
+  z-index: 99999;
   top: 400px;
   position: fixed;
   left: 85%;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: rgb(36, 170, 125);
+  background-color: hsl(211deg 22% 80%);
+  border-radius: 35%;
+  line-height: 2rem;
+  height: 2.5rem;
 }
 
 .float-date-list {
+  z-index: 99999;
   background-color: hsl(211deg 22% 80%);
   border-radius: 5px;
   width: 100px;
