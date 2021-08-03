@@ -10,17 +10,22 @@ import xiaoxin from "@/images/xiaoxin.jpg"
 const Header = ({ siteTitle, tagline, author, contacts }) => {
   return (
     <>
-      <header className="head-main row justify-content-around m-0 primary-bgc px-2 d-sm-block d-none">
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+      <header className="head-main primary-bgc px-2 d-sm-block d-none ">
+        <div
+          className="container row  justify-content-between"
+          style={{ margin: "0 auto" }}
         >
-          {siteTitle}
-        </Link>
-        <SocialLinks contacts={contacts} />
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+          <SocialLinks contacts={contacts} />
+        </div>
       </header>
       <header className="head-main container row justify-content-between m-0 primary-bgc py-1 d-sm-none">
         <Link

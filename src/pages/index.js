@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (
-          <div key={post.node.id} className="container mt-md-5 pb-3">
+          <div key={post.node.id} className="container pb-3">
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="title">{post.node.frontmatter.title}</h2>
             </Link>
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => {
                 阅读量： {post.node.timeToRead}
               </small>
             </div>
-            <p className="mt-3 d-inline">{post.node.excerpt}</p>
+            <p className="d-inline">{post.node.excerpt}</p>
             <Link to={post.node.fields.slug} className="text-primary">
               <small className="d-inline-block ml-3"> 阅读全文</small>
             </Link>
