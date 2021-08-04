@@ -44,7 +44,7 @@ const Date = ({ pageContext, data }) => {
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (
-          <div key={post.node.id} className="container mt-5 mx-3">
+          <div key={post.node.id} className="container mt-5">
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="heading">{post.node.frontmatter.title}</h2>
             </Link>

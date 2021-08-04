@@ -84,14 +84,14 @@ exports.createPages = ({ graphql, actions }) => {
  
          // Make tag pages
          formatDatas.forEach(date => {
-            const arr = date.split('-');
-            let year = arr[0];
-            let month = arr[1]
-            if(month == "12") {
-              year = year + 1
-              month = "1"
-            }
-            const nextMonth = `${year}-${month+1}`
+          const arr = date.split('-');
+          let year = arr[0];
+          let month = arr[1]
+          if(month == "12") {
+            year = year + 1
+            month = "1"
+          }
+          const nextMonth = `${year}-${month+1}`
            createPage({
              path: `/date/${_.kebabCase(date)}/`,
              component: path.resolve("src/templates/date.js"),
