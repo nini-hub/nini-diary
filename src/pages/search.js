@@ -1,5 +1,5 @@
-import React from "react"
-import { Link, graphql, navigate } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 
@@ -8,13 +8,20 @@ import SEO from "@/components/seo"
 
 import TechTag from "@/components/tags/TechTag"
 
-const IndexPage = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges
+const keywordPage = ({ data, location }) => {
+  const [posts, setPosts] = useState([])
+  useEffect(() => {
+    let temp = []
+    data.allMarkdownRemark.edges?.map(post => {
+      if (
+        post.node.frontmatter.title.includes(location?.search?.split("=")[1])
+      ) {
+        temp.push(post)
+      }
+    })
+    setPosts(temp)
+  }, [location?.search])
   const labels = data.site.siteMetadata.labels
-  const currentPage = 1
-  const postsPerPage = 5 // see limit in graphql query below
-  const nextPage = "/" + (currentPage + 1).toString()
-  const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
 
   const getTechTags = tags => {
     const techTags = []
@@ -39,8 +46,11 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="首页" />
 
+      {posts?.length < 1 && <>暂无</>}
+
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
+
         return (
           <div key={post.node.id} className="container pb-3">
             <Link to={post.node.fields.slug} className="text-dark">
@@ -62,21 +72,12 @@ const IndexPage = ({ data }) => {
           </div>
         )
       })}
-
-      <div className="mx-1 mt-3 row justify-content-between">
-        <span style={{ color: `#ccc` }}>← 上一页</span>
-        {hasNextPage && (
-          <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-            <span className="text-dark ml-5">下一页 →</span>
-          </Link>
-        )}
-      </div>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query allQuery {
     site {
       siteMetadata {
         title
@@ -89,7 +90,6 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true } } }
     ) {
@@ -114,4 +114,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default IndexPage
+export default keywordPage
