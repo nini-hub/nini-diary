@@ -83,12 +83,12 @@ const Layout = ({ children }) => {
                 </Link>
               ))}
             </div>
-            <div className="index-main mt-2 container">
-              <div className="sidebar border-right px-1 py-2">
+            <div className="index-main mt-2 container row">
+              <div className="border-right px-1 py-2 col-2">
                 <Sidebar />
               </div>
-              <div className="post-list-main">{children}</div>
-              <div className="border-left rightBar px-2">
+              <div className="col-8">{children}</div>
+              <div className="border-left px-2 col-2">
                 <RightBar />
               </div>
             </div>

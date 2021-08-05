@@ -27,11 +27,11 @@ const Right = () => {
           arr.push(edge.node.frontmatter.date)
         })
         return (
-          <div style={{ position: "fixed" }}>
+          <div>
             <h4 className="mb-1">搜索</h4>
             <input
               defaultValue=""
-              id="search"
+              class="form-control"
               type="text"
               placeholder="按下回车进行搜索"
               onKeyUp={event => {

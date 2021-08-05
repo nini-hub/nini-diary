@@ -6,6 +6,7 @@ import "@/pages/index.css"
 import Layout from "@/components/layout"
 import SEO from "@/components/seo"
 import TechTag from "@/components/tags/TechTag"
+import range from "lodash/range"
 
 const PostList = props => {
   const posts = props.data.allMarkdownRemark.edges
@@ -63,20 +64,37 @@ const PostList = props => {
           </div>
         )
       })}
-      <div className="mx-4 mt-4 row justify-content-between">
-        {!isFirst ? (
-          <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>
-            <span className="text-dark">← 上一页</span>
-          </Link>
-        ) : (
-          <span style={{ color: `#ccc` }}>← 上一页</span>
-        )}
-        {!isLast && (
-          <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-            <span className="text-dark">下一页 →</span>
-          </Link>
-        )}
-      </div>
+      <nav>
+        <ul class="pagination pagination-sm mt-4">
+          <li class={`page-item ${isFirst && "disabled"}`} key="first">
+            <a
+              class="page-link"
+              href={prevPage}
+              tabindex="-1"
+              aria-disabled="true"
+            >
+              &laquo;
+            </a>
+          </li>
+          {range(1, numPages + 1, 1).map(item => {
+            return (
+              <li
+                class={`page-item ${currentPage == item ? "active" : ""}`}
+                key={item}
+              >
+                <a class="page-link" href={`/${item}`}>
+                  {item}
+                </a>
+              </li>
+            )
+          })}
+          <li class={`page-item ${isLast && "disabled"}`} key="last">
+            <a class="page-link" href={nextPage}>
+              &raquo;
+            </a>
+          </li>
+        </ul>
+      </nav>
     </Layout>
   )
 }

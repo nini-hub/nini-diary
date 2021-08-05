@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, graphql, navigate } from "gatsby"
-import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 
 import Layout from "@/components/layout"
 import SEO from "@/components/seo"
+import range from "lodash/range"
 
 import TechTag from "@/components/tags/TechTag"
 
@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (
-          <div key={post.node.id} className="container pb-3">
+          <div key={post.node.id} className="container pt-3 border-bottom">
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="title">{post.node.frontmatter.title}</h2>
             </Link>
@@ -63,14 +63,40 @@ const IndexPage = ({ data }) => {
         )
       })}
 
-      <div className="mx-1 mt-3 row justify-content-between">
-        <span style={{ color: `#ccc` }}>← 上一页</span>
-        {hasNextPage && (
-          <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-            <span className="text-dark ml-5">下一页 →</span>
-          </Link>
-        )}
-      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled" key="first">
+            <a class="page-link" href="" tabindex="-1" aria-disabled="true">
+              &laquo;
+            </a>
+          </li>
+          {range(
+            1,
+            data.allMarkdownRemark.totalCount / postsPerPage + 1,
+            1
+          ).map(item => {
+            if (item == 1) {
+              return (
+                <li class="page-item active" aria-current="page" key={item}>
+                  <span class="page-link">1</span>
+                </li>
+              )
+            }
+            return (
+              <li class="page-item" key={item}>
+                <a class="page-link" href={`/${item}`}>
+                  {item}
+                </a>
+              </li>
+            )
+          })}
+          <li class={`page-item ${hasNextPage && "disabled"}`} key="last">
+            <a class="page-link" href={nextPage}>
+              &raquo;
+            </a>
+          </li>
+        </ul>
+      </nav>
     </Layout>
   )
 }

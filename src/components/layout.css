@@ -33,18 +33,9 @@ body {
 }
 
 .index-main {
-  display: flex;
+  margin: 0 auto;
 } 
 
-.sidebar {
-  width: 20%;
-}
-.post-list-main {
-  width: 65%;
-}
-.rightBar {
-  width: 15%;
-}
 @media only screen and (max-width: 568px) {
   .sidebar,.rightBar{display: none;}
   .index-main > .post-list-main{
