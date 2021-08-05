@@ -16,7 +16,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  console.log(window)
   return graphql(`
     {
       allMarkdownRemark {
