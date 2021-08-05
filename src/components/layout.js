@@ -18,7 +18,6 @@ import RightBar from "@/components/sidebar/RightBar"
 
 const Layout = ({ children }) => {
   const [visible, setVisible] = useState(false)
-  console.log(visible)
   return (
     <StaticQuery
       query={graphql`
