@@ -84,11 +84,11 @@ const Layout = ({ children }) => {
               ))}
             </div>
             <div className="index-main mt-2 container row">
-              <div className="border-right px-1 py-2 col-2">
+              <div className="border-right px-1 py-2 col-2 d-sm-block d-none">
                 <Sidebar />
               </div>
-              <div className="col-8">{children}</div>
-              <div className="border-left px-2 col-2">
+              <div className="col-sm-8">{children}</div>
+              <div className="border-left px-2 col-2 d-sm-block d-none">
                 <RightBar />
               </div>
             </div>
