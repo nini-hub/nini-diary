@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql, navigate } from "gatsby"
 import "./index.css"
-
+import sayhello from "react-hot-zone"
 import Layout from "@/components/layout"
 import SEO from "@/components/seo"
 import range from "lodash/range"
@@ -64,9 +64,9 @@ const IndexPage = ({ data }) => {
       })}
 
       <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-end">
-          <li class="page-item disabled" key="first">
-            <a class="page-link" href="" tabindex="-1" aria-disabled="true">
+        <ul className="pagination justify-content-end">
+          <li className="page-item disabled" key="first">
+            <a className="page-link" href="" tabindex="-1" aria-disabled="true">
               &laquo;
             </a>
           </li>
@@ -77,21 +77,21 @@ const IndexPage = ({ data }) => {
           ).map(item => {
             if (item == 1) {
               return (
-                <li class="page-item active" aria-current="page" key={item}>
-                  <span class="page-link">1</span>
+                <li className="page-item active" aria-current="page" key={item}>
+                  <span className="page-link">1</span>
                 </li>
               )
             }
             return (
-              <li class="page-item" key={item}>
-                <a class="page-link" href={`/${item}`}>
+              <li className="page-item" key={item}>
+                <a className="page-link" href={`/${item}`}>
                   {item}
                 </a>
               </li>
             )
           })}
-          <li class={`page-item ${hasNextPage && "disabled"}`} key="last">
-            <a class="page-link" href={nextPage}>
+          <li className={`page-item ${hasNextPage && "disabled"}`} key="last">
+            <a className="page-link" href={nextPage}>
               &raquo;
             </a>
           </li>

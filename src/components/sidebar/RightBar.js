@@ -31,7 +31,7 @@ const Right = () => {
             <h4 className="mb-1">搜索</h4>
             <input
               defaultValue=""
-              class="form-control"
+              className="form-control"
               type="text"
               placeholder="按下回车进行搜索"
               onKeyUp={event => {

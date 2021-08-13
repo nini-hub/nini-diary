@@ -65,12 +65,12 @@ const PostList = props => {
         )
       })}
       <nav>
-        <ul class="pagination pagination-sm mt-4">
-          <li class={`page-item ${isFirst && "disabled"}`} key="first">
+        <ul className="pagination pagination-sm mt-4">
+          <li className={`page-item ${isFirst && "disabled"}`} key="first">
             <a
-              class="page-link"
+              className="page-link"
               href={prevPage}
-              tabindex="-1"
+              tabIndex="-1"
               aria-disabled="true"
             >
               &laquo;
@@ -79,17 +79,17 @@ const PostList = props => {
           {range(1, numPages + 1, 1).map(item => {
             return (
               <li
-                class={`page-item ${currentPage == item ? "active" : ""}`}
+                className={`page-item ${currentPage == item ? "active" : ""}`}
                 key={item}
               >
-                <a class="page-link" href={`/${item}`}>
+                <a className="page-link" href={`/${item}`}>
                   {item}
                 </a>
               </li>
             )
           })}
-          <li class={`page-item ${isLast && "disabled"}`} key="last">
-            <a class="page-link" href={nextPage}>
+          <li className={`page-item ${isLast && "disabled"}`} key="last">
+            <a className="page-link" href={nextPage}>
               &raquo;
             </a>
           </li>
