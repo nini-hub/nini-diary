@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql, navigate } from "gatsby"
 import "./index.css"
-import sayhello from "react-hot-zone"
 import Layout from "@/components/layout"
 import SEO from "@/components/seo"
 import range from "lodash/range"
