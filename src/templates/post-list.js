@@ -51,9 +51,9 @@ const PostList = props => {
               <small className="text-info">
                 发表于 {post.node.frontmatter.date}
               </small>
-              <small className="text-info">
+              {/* <small className="text-info">
                 阅读量： {post.node.timeToRead}
-              </small>
+              </small> */}
             </div>
             <p className="mt-3 d-inline">{post.node.excerpt}</p>
             <Link to={post.node.fields.slug} className="text-primary">

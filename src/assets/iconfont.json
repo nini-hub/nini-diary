@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13304145",
+      "name": "vue",
+      "font_class": "vue",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
       "icon_id": "4685760",
       "name": "收缩",
       "font_class": "Group-",

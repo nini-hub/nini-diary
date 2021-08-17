@@ -49,9 +49,9 @@ const IndexPage = ({ data }) => {
               <small className="text-info">
                 发表于 {post.node.frontmatter.date}
               </small>
-              <small className="text-info">
+              {/* <small className="text-info">
                 阅读量： {post.node.timeToRead}
-              </small>
+              </small> */}
             </div>
             <p className="d-inline">{post.node.excerpt}</p>
             <Link to={post.node.fields.slug} className="text-primary">
@@ -65,7 +65,7 @@ const IndexPage = ({ data }) => {
       <nav aria-label="Page navigation example">
         <ul className="pagination justify-content-end">
           <li className="page-item disabled" key="first">
-            <a className="page-link" href="" tabindex="-1" aria-disabled="true">
+            <a className="page-link" href="" tabIndex="-1" aria-disabled="true">
               &laquo;
             </a>
           </li>

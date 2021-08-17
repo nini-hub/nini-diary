@@ -2,7 +2,7 @@
 
 module.exports = {
   url: "https://ninidiary.gatsbyjs.io/",
-  title: "前端",
+  title: "",
   tagline: "不知道说点什么",
   copyright: "© 2021 nini-hub, All rights reserved",
   author: {
@@ -67,6 +67,11 @@ module.exports = {
       tag: "初体验",
       tech: "初体验",
       name: "icon-tubiaozhizuosvg-41",
+    },
+    {
+      tag: "vue",
+      tech: "vue",
+      name: "icon-vue",
     },
   ],
 }

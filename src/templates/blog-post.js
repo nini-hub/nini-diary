@@ -38,7 +38,7 @@ const BlogPost = props => {
         <br />
         <div className="mx-0 row justify-content-between mb-3">
           <small className="text-info">发表于 {post.frontmatter.date}</small>
-          <small className="text-info">阅读量： {post.timeToRead}</small>
+          {/* <small className="text-info">阅读量： {post.timeToRead}</small> */}
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
