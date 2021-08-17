@@ -32,8 +32,6 @@ const BlogPost = props => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-
-      <SEO title={post.frontmatter.title} />
       <div className="mt-3">
         <h2 className="heading">{post.frontmatter.title}</h2>
         <div className="d-block">{getTechTags(tags)}</div>

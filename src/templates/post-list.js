@@ -40,7 +40,6 @@ const PostList = props => {
   return (
     <Layout>
       <SEO title="文章" />
-
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (

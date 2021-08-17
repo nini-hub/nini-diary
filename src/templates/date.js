@@ -37,7 +37,6 @@ const Date = ({ pageContext, data }) => {
   return (
     <Layout>
       <SEO title="日期" />
-
       <i>
         <h2 className="heading mx-3">{titleHeader}</h2>
       </i>
