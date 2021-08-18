@@ -26,7 +26,6 @@ const Sidebar = () => {
             }
           }
           allMarkdownRemark(
-            limit: 10
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { frontmatter: { published: { eq: true } } }
           ) {
