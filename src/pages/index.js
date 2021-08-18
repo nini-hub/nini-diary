@@ -14,6 +14,7 @@ const IndexPage = ({ data }) => {
   const postsPerPage = 5 // see limit in graphql query below
   const nextPage = "/" + (currentPage + 1).toString()
   const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
+  console.log('hasNextPage: ', hasNextPage);
 
   const getTechTags = tags => {
     const techTags = []
@@ -89,7 +90,7 @@ const IndexPage = ({ data }) => {
               </li>
             )
           })}
-          <li className={`page-item ${hasNextPage && "disabled"}`} key="last">
+          <li className={`page-item ${!hasNextPage && "disabled"}`} key="last">
             <a className="page-link" href={nextPage}>
               &raquo;
             </a>
