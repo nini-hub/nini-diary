@@ -15,6 +15,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = ({ graphql, actions }) => {
+  const { createRedirect } = actions
+  createRedirect({
+    fromPath: `/1`,
+    toPath: `/`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
   const { createPage } = actions
   return graphql(`
     {

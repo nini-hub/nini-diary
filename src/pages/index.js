@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => {
       })}
 
       <nav aria-label="Page navigation example">
-        <ul className="pagination justify-content-end">
+        <ul className="pagination pagination-sm justify-content-end">
           <li className="page-item disabled" key="first">
             <a className="page-link" href="" tabIndex="-1" aria-disabled="true">
               &laquo;

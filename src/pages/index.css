@@ -20,7 +20,28 @@
   font-size: 16px;
 }
 
+.page-item.active .page-link{
+  background-color: #617284;
+  border-color: #617284;
+} 
+.page-link {
+  color: #617284;
+}
+.page-link:focus {
+  box-shadow: 0 0 0 0.1rem #617284;
+}
 
+a > small {
+  color: #617284;
+}
+
+a > small:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #617284;
+}
 
 @media only screen and (max-width: 568px) {
   .sidebar{display: none;}

@@ -43,7 +43,7 @@ const PostList = props => {
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (
-          <div key={post.node.id} className="container mt-5">
+          <div key={post.node.id} className="container pt-3 border-bottom">
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="title">{post.node.frontmatter.title}</h2>
             </Link>
@@ -64,7 +64,7 @@ const PostList = props => {
         )
       })}
       <nav>
-        <ul className="pagination pagination-sm mt-4">
+        <ul className="pagination pagination-sm mt-4 justify-content-end">
           <li className={`page-item ${isFirst && "disabled"}`} key="first">
             <a
               className="page-link"
