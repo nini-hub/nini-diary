@@ -43,7 +43,7 @@ const PostList = props => {
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (
-          <div key={post.node.id} className="container pt-3 border-bottom">
+          <div key={post.node.id} className="container py-3 border-bottom">
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="title">{post.node.frontmatter.title}</h2>
             </Link>

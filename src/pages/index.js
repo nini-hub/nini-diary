@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (
-          <div key={post.node.id} className="container pt-3 border-bottom">
+          <div key={post.node.id} className="container py-3 border-bottom">
             <Link to={post.node.fields.slug} className="text-dark">
               <h2 className="title">{post.node.frontmatter.title}</h2>
             </Link>
@@ -62,8 +62,8 @@ const IndexPage = ({ data }) => {
         )
       })}
 
-      <nav aria-label="Page navigation example">
-        <ul className="pagination pagination-sm justify-content-end">
+      <nav>
+        <ul className="pagination pagination-sm justify-content-end mt-4">
           <li className="page-item disabled" key="first">
             <a className="page-link" href="" tabIndex="-1" aria-disabled="true">
               &laquo;
