@@ -33,8 +33,7 @@ const ArchivePage = ({ data }) => {
   return (
     <Layout>
       <SEO title="文章" />
-
-      <h2 className="heading mt-3">All Posts</h2>
+      <h2 className="heading mt-3">所有文章</h2>
       {posts.map(post => {
         const tags = post.node.frontmatter.tags
         return (

@@ -14,7 +14,6 @@ const IndexPage = ({ data }) => {
   const postsPerPage = 5 // see limit in graphql query below
   const nextPage = "/" + (currentPage + 1).toString()
   const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
-  console.log('hasNextPage: ', hasNextPage);
 
   const getTechTags = tags => {
     const techTags = []
