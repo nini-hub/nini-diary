@@ -14,9 +14,10 @@ const TechTag = props => {
           {/* <svg className="home-content3__icon" aria-hidden="true">
             <use href={item.icon} />
           </svg> */}
-          <svg className="icon">
+          <i class={`iconfont ${name}`}></i>
+          {/* <svg className="icon" style={{fill:'#fff'}}>
             <use href={`#${name}`}></use>
-          </svg>
+          </svg> */}
           {/* <img
             src={require(`../../images/icons/${name}`)}
             style={{ width: 18, margin: 0 }}

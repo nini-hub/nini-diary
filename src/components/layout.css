@@ -34,10 +34,11 @@ body {
 
 .index-main {
   margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
 } 
 
 @media only screen and (max-width: 568px) {
-  .sidebar,.rightBar{display: none;}
   .index-main > .post-list-main{
     width: 100%;
   }

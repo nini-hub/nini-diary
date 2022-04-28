@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
               author={data.site.siteMetadata.author}
               contacts={data.site.siteMetadata.contacts}
             />
-            <div
+            {/* <div
               className="float-date d-block d-sm-none"
               onClick={() => setVisible(!visible)}
             >
@@ -82,20 +82,16 @@ const Layout = ({ children }) => {
                   <span className="text-dark">({d.length})</span>
                 </Link>
               ))}
-            </div>
-            <div className="index-main mt-2 container row">
-              <div className="border-right px-1 py-2 col-2 d-sm-block d-none">
+            </div> */}
+            <div className="index-main row">
+              <div className="border-right col-2 d-none d-lg-block">
                 <Sidebar />
               </div>
-              <div className="col-sm-8">{children}</div>
-              <div className="border-left px-2 col-2 d-sm-block d-none">
-                <RightBar />
-              </div>
+              <div className="col-md-12 col-lg-10">{children}</div>
             </div>
             <footer className="text-center">
-              <hr />
               <p className="d-inline">
-                © {new Date().getFullYear()}&nbsp;nini-hub , All Rights
+                © {new Date().getFullYear()}&nbsp;nininini-1, All Rights
                 Reserved.
               </p>
             </footer>

@@ -38,32 +38,32 @@ const Tag = ({ pageContext, data }) => {
   return (
     <Layout>
       <SEO title="分类" />
-      <i>
-        <h2 className="heading mx-3">{tagHeader}</h2>
-      </i>
-      {posts.map(post => {
-        const tags = post.node.frontmatter.tags
-        return (
-          <div key={post.node.id} className="container mt-5">
-            <Link to={post.node.fields.slug} className="text-dark">
-              <h2 className="heading">{post.node.frontmatter.title}</h2>
-            </Link>
-            <div className="mx-0 row justify-content-between">
-              <small className="text-info">
-                发表于 {post.node.frontmatter.date}
-              </small>
-              {/* <small className="text-info">
+      <div className="mt-5">
+        <h2 className="heading mx-3 mb-2">{tagHeader}</h2>
+        {posts.map(post => {
+          const tags = post.node.frontmatter.tags
+          return (
+            <div key={post.node.id} className="container mt-3">
+              <Link to={post.node.fields.slug} className="text-dark">
+                <h2 className="heading">{post.node.frontmatter.title}</h2>
+              </Link>
+              <div className="mx-0 row justify-content-between">
+                <small className="text-info">
+                  发表于 {post.node.frontmatter.date}
+                </small>
+                {/* <small className="text-info">
                 阅读量：{post.node.timeToRead}
               </small> */}
+              </div>
+              <p className="mt-3 d-inline">{post.node.excerpt}</p>
+              <Link to={post.node.fields.slug} className="text-primary">
+                <small className="d-inline-block ml-3"> 阅读全文</small>
+              </Link>
+              <div className="d-block">{getTechTags(tags)}</div>
             </div>
-            <p className="mt-3 d-inline">{post.node.excerpt}</p>
-            <Link to={post.node.fields.slug} className="text-primary">
-              <small className="d-inline-block ml-3"> 阅读全文</small>
-            </Link>
-            <div className="d-block">{getTechTags(tags)}</div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </Layout>
   )
 }

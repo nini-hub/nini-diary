@@ -4,9 +4,9 @@
   display: flex;
 } 
 
-.sidebar {
+/* .sidebar {
   width: 25%;
-}
+} */
 .post-list-main {
   width: 60%;
 }
@@ -16,23 +16,23 @@
 }
 
 .rightBar input {
-  width: 80%;
+  width: 100%;
   font-size: 16px;
 }
 
 .page-item.active .page-link{
-  background-color: #617284;
-  border-color: #617284;
+  background-color: #2f9f5f;
+  border-color: #2f9f5f;
 } 
 .page-link {
-  color: #617284;
+  color: #2f9f5f;
 }
 .page-link:focus {
-  box-shadow: 0 0 0 0.1rem #617284;
+  box-shadow: 0 0 0 0.1rem #2f9f5f;
 }
 
 a > small {
-  color: #617284;
+  color: #9fd4b6;
 }
 
 a > small:hover {
@@ -40,11 +40,10 @@ a > small:hover {
 }
 
 a {
-  color: #617284;
+  color: #9fd4b6;
 }
 
 @media only screen and (max-width: 568px) {
-  .sidebar{display: none;}
   .index-main{
     display: flex;
     flex-direction: row;

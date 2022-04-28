@@ -14,7 +14,7 @@
 }
 
 .primary-bgc {
-  background-color: #617284;
+  background-color: #9fd4b6;
 }
 .herder-name {
   color: #fff;
@@ -36,6 +36,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 .mobile-pages-main {

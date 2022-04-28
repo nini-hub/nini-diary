@@ -7,6 +7,5 @@
 
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"
-
-require("./src/assets/iconfont")
+import "./src/assets/iconfont.css"
 

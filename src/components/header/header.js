@@ -10,7 +10,7 @@ import xiaoxin from "@/images/xiaoxin.jpg"
 const Header = ({ siteTitle, tagline, author, contacts }) => {
   return (
     <>
-      <header className="head-main primary-bgc px-2 d-sm-block d-none ">
+      <header className="head-main primary-bgc px-2 d-lg-block d-none">
         <div
           className="container row  justify-content-between"
           style={{ margin: "0 auto" }}
@@ -24,10 +24,22 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
           >
             {siteTitle}
           </Link>
-          <SocialLinks contacts={contacts} />
+          <div>
+            <Link
+              to="/search"
+              style={{
+                color: `white`,
+                textDecoration: `none`,
+              }}
+            >
+              <i className="iconfont icon-sousuo" style={{ fontSize: 28 }}></i>
+            </Link>
+
+            <SocialLinks contacts={contacts} />
+          </div>
         </div>
       </header>
-      <header className="head-main container row justify-content-between m-0 primary-bgc py-1 d-sm-none">
+      <header className="row justify-content-between m-0 primary-bgc py-1 px-1 d-lg-none">
         <Link
           to="/"
           style={{
@@ -37,7 +49,7 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
         >
           <img
             src={xiaoxin}
-            className="d-md-none d-inline-block m-0 mr-2"
+            className="d-inline-block m-0 mr-2 d-lg-none"
             style={{
               maxWidth: `45px`,
               maxHeight: `45px`,
@@ -47,11 +59,23 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
         </Link>
         <div className="herder-name">
           <h1 className="mb-1">{siteTitle}</h1>
-          <h6 className="m-0 d-md-none">{author}</h6>
+          <h6 className="m-0 d-lg-none">{author}</h6>
         </div>
-        <SocialLinks contacts={contacts} />
+        <div style={{ lineHeight: "60px" }}>
+          <Link
+            to="/search"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            <i className="iconfont icon-sousuo" style={{ fontSize: 28 }}></i>
+          </Link>
+
+          <SocialLinks contacts={contacts} />
+        </div>
         {/* </div> */}
-        <MobilePageLinks />
+        {/* <MobilePageLinks /> */}
       </header>
     </>
   )

@@ -2,14 +2,14 @@
 
 module.exports = {
   url: "https://ninidiary.gatsbyjs.io/",
-  title: "",
+  title: "真有妮的碎碎念",
   tagline: "不知道说点什么",
   copyright: "© 2021 nini-hub, All rights reserved",
   author: {
     name: "真有妮的",
     bio: "说我点什么好呢",
     contacts: {
-      github: "https://github.com/nini-hub",
+      github: "https://github.com/nininini-1",
     },
   },
   labels: [
@@ -26,7 +26,7 @@ module.exports = {
     {
       tag: "CICD",
       tech: "CICD",
-      name: "icon-liushuixian",
+      name: "icon-ziyuan",
     },
     {
       tag: "CSS",
@@ -41,7 +41,7 @@ module.exports = {
     {
       tag: "自动化测试",
       tech: "自动化测试",
-      name: "icon-ceshi",
+      name: "icon-xinicon_huabanfuben",
     },
     {
       tag: "碎碎念",
@@ -51,22 +51,22 @@ module.exports = {
     {
       tag: "草稿篇",
       tech: "草稿篇",
-      name: "icon-caogao-tianchong",
+      name: "icon-caogao",
     },
     {
       tag: "小总结",
       tech: "小总结",
-      name: "icon-zongjiebaogao",
+      name: "icon-zongjie",
     },
     {
       tag: "入门笔记",
       tech: "入门笔记",
-      name: "icon-xinshouzhinan",
+      name: "icon-xinshourumen",
     },
     {
       tag: "初体验",
       tech: "初体验",
-      name: "icon-tubiaozhizuosvg-41",
+      name: "icon-tiyanzhe",
     },
     {
       tag: "vue",
