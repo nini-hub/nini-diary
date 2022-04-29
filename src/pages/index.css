@@ -31,6 +31,10 @@
   box-shadow: 0 0 0 0.1rem #2f9f5f;
 }
 
+.page-link:hover {
+  color: #2f9f5f;
+}
+
 a > small {
   color: #9fd4b6;
 }
