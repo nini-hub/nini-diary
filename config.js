@@ -73,5 +73,10 @@ module.exports = {
       tech: "vue",
       name: "icon-vue",
     },
+    {
+      tag: "面试题",
+      tech: "面试题",
+      name: "icon-flow-interview",
+    },
   ],
 }
