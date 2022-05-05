@@ -149,3 +149,30 @@ ReactDOM.render(
 | y      | Y coordinate  relative to left corner(0,0) of background image. From top to bottom, y will go up. | number(in pixel) | -       |
 | width  | Width of coordinate                                          | number(in pixel) | -       |
 | height | Height of coordinate                                         | number(in pixel) | -       |
+
+
+## [p-limit](https://www.npmjs.com/package/p-limit)
+### 需求
+批量发送请求，自定义请求的并发度，当执行完全部请求后，给予提示。
+
+### 解决方案
+npm中有很多实现这个功能的第三方包，比如async-pool、es6-promise-pool、p-limit，这里我直接用 p-limit
+
+### 使用
+```js
+const pLimit = require('p-limit');
+// 或者 import pLimit from "p-limit";
+ 
+const limit = pLimit(5); // 5 表示每次发送5个请求
+ 
+const input = [
+    limit(() => fetchSomething('foo')),
+    limit(() => fetchSomething('bar')),
+    limit(() => doSomething())
+];
+ 
+(async () => {
+    const result = await Promise.all(input);
+    console.log(result);
+})();
+```
